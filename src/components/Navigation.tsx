@@ -1,5 +1,6 @@
 // Nav.js
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Nav() {
   return (
@@ -7,16 +8,16 @@ function Nav() {
       <div className="container">
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="/menu">Menu</a>
+            <Link to="/menu">Menu</Link>
           </li>
           <li>
-            <a href="/reservations">Reservations</a>
+            <Link to="/booking">Reservations</Link>
           </li>
           <li>
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </div>
