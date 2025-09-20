@@ -3,9 +3,9 @@ import React from "react";
 
 function Header() {
   return (
-    <header>
+    <header role="banner">
       <div className="container">
-        <img src="/logo.png" alt="Little Lemon Logo" />
+        <img src="/logo.png" alt="Little Lemon Restaurant Logo" />
       </div>
     </header>
   );

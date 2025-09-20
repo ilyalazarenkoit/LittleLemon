@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer>
+    <footer role="contentinfo">
       <div className="container">
         <p>
           &copy; {new Date().getFullYear()} Little Lemon. All rights reserved.

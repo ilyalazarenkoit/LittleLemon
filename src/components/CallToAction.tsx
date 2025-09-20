@@ -4,15 +4,24 @@ import { Link } from "react-router-dom";
 
 function CallToAction() {
   return (
-    <section className="hero-section">
+    <section
+      className="hero-section"
+      role="banner"
+      aria-labelledby="hero-title"
+    >
       <div className="container">
         <div className="hero-content">
-          <h1>Welcome to Little Lemon</h1>
+          <h1 id="hero-title">Welcome to Little Lemon</h1>
           <p className="hero-subtitle">
             A family-owned Mediterranean restaurant offering authentic flavors,
             fresh ingredients, and exceptional dining experiences.
           </p>
-          <Link to="/booking" className="cta-button">
+          <Link
+            to="/booking"
+            className="cta-button"
+            aria-label="On Click"
+            role="button"
+          >
             Reserve a Table
           </Link>
         </div>

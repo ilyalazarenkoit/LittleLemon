@@ -30,27 +30,46 @@ function Specials() {
   ];
 
   return (
-    <section className="specials-section">
+    <section className="specials-section" aria-labelledby="specials-title">
       <div className="container">
         <div className="specials-header">
-          <h2>This Week's Specials</h2>
-          <button className="menu-button">Online Menu</button>
+          <h2 id="specials-title">This Week's Specials</h2>
+          <button className="menu-button" aria-label="On Click">
+            Online Menu
+          </button>
         </div>
-        <div className="specials-grid">
+        <div
+          className="specials-grid"
+          role="list"
+          aria-label="Weekly specials menu items"
+        >
           {specials.map((special) => (
-            <div key={special.id} className="special-card">
+            <article key={special.id} className="special-card" role="listitem">
               <div className="special-image">
-                <img src={special.image} alt={special.name} />
+                <img
+                  src={special.image}
+                  alt={`${special.name} - ${special.description}`}
+                />
               </div>
               <div className="special-content">
                 <div className="special-header">
                   <h3>{special.name}</h3>
-                  <span className="special-price">{special.price}</span>
+                  <span
+                    className="special-price"
+                    aria-label={`Price: ${special.price}`}
+                  >
+                    {special.price}
+                  </span>
                 </div>
                 <p className="special-description">{special.description}</p>
-                <button className="order-button">Order a delivery</button>
+                <button
+                  className="order-button"
+                  aria-label={`Order ${special.name} for delivery`}
+                >
+                  Order a delivery
+                </button>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

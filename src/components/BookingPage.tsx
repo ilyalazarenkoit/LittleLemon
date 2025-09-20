@@ -35,34 +35,44 @@ function BookingPage() {
     }
   };
   return (
-    <main className="booking-page">
+    <main className="booking-page" role="main">
       <div className="container">
-        <div className="booking-header">
+        <header className="booking-header">
           <h1>Reserve a Table</h1>
           <p>
             Book your table at Little Lemon for an unforgettable dining
             experience.
           </p>
-        </div>
+        </header>
 
         <div className="booking-content">
-          <div className="booking-form-container">
+          <section
+            className="booking-form-container"
+            aria-labelledby="booking-form-title"
+          >
             <BookingForm submitForm={submitForm} />
-          </div>
+          </section>
 
-          <div className="booking-info">
-            <h3>Restaurant Information</h3>
+          <aside
+            className="booking-info"
+            aria-labelledby="restaurant-info-title"
+          >
+            <h3 id="restaurant-info-title">Restaurant Information</h3>
             <div className="info-item">
               <h4>Address</h4>
-              <p>
+              <address>
                 123 Mediterranean Street
                 <br />
                 Chicago, IL 60601
-              </p>
+              </address>
             </div>
             <div className="info-item">
               <h4>Phone</h4>
-              <p>(312) 555-0123</p>
+              <p>
+                <a href="tel:+13125550123" aria-label="Call us at 312-555-0123">
+                  (312) 555-0123
+                </a>
+              </p>
             </div>
             <div className="info-item">
               <h4>Hours</h4>
@@ -72,7 +82,7 @@ function BookingPage() {
                 5:00 PM - 10:00 PM
               </p>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </main>
