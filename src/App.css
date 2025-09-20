@@ -1,38 +1,357 @@
+/* Main App Layout using CSS Grid */
 .App {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+  font-family: "Karla", sans-serif;
+}
+
+/* Header Styles */
+header {
+  grid-area: header;
+
+  background-color: var(--primary-green);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+header img {
+  height: 60px;
+  width: auto;
+  border-radius: var(--border-radius);
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Styles */
+nav {
+  grid-area: nav;
+  background-color: var(--primary-yellow);
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+nav a:hover {
+  background-color: var(--highlight-dark);
+  color: var(--primary-yellow);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Main Content Styles */
+main {
+  grid-area: main;
+  background-color: var(--text-light);
+  min-height: 60vh;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    var(--primary-green) 0%,
+    var(--primary-yellow) 100%
+  );
+  padding: 4rem 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-content h1 {
+  color: var(--text-light);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.hero-subtitle {
+  color: var(--text-light);
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+  background-color: var(--primary-yellow);
+  color: var(--text-primary);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.cta-button:hover {
+  background-color: var(--highlight-dark);
+  color: var(--primary-yellow);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Features Section */
+.features-section {
+  padding: 4rem 0;
+  background-color: var(--highlight-light);
+}
+
+.features-section h2 {
+  text-align: center;
+  color: var(--primary-green);
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: var(--text-light);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-card h3 {
+  color: var(--primary-green);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Menu Preview Section */
+.menu-preview {
+  padding: 4rem 0;
+  background-color: var(--text-light);
+}
+
+.menu-preview h2 {
+  text-align: center;
+  color: var(--primary-green);
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  background: var(--highlight-light);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  border-left: 4px solid var(--primary-yellow);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.menu-item h3 {
+  color: var(--primary-green);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu-item p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Footer Styles */
+footer {
+  grid-area: footer;
+  background-color: var(--highlight-dark);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "footer";
+  }
+
+  header {
+    padding: 1rem;
+  }
+
+  header img {
+    height: 50px;
+  }
+
+  nav {
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  /* Hero Section Mobile */
+  .hero-section {
+    padding: 2rem 0;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  /* Features Section Mobile */
+  .features-section {
+    padding: 2rem 0;
+  }
+
+  .features-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  /* Menu Preview Mobile */
+  .menu-preview {
+    padding: 2rem 0;
+  }
+
+  .menu-preview h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .menu-item {
+    padding: 1.5rem;
+  }
+
+  footer {
+    padding: 1rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 480px) {
+  header img {
+    height: 40px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .features-section h2,
+  .menu-preview h2 {
+    font-size: 1.8rem;
+  }
+
+  .feature-card,
+  .menu-item {
+    padding: 1rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
   }
 }
